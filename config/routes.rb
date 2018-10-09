@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   get 'sessions/new'
 
   # root home page
@@ -15,6 +19,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   resources :users
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
   # static page routing
   get '/help', to: 'static_pages#help'
