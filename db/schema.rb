@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181009190910) do
+ActiveRecord::Schema.define(version: 20181011011029) do
+
+  create_table "coffees", force: :cascade do |t|
+    t.string "name"
+    t.integer "roaster_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["roaster_id"], name: "index_coffees_on_roaster_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.float "rating"
+    t.integer "user_id"
+    t.integer "coffee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_id"], name: "index_reviews_on_coffee_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "roasters", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

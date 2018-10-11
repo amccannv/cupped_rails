@@ -1,0 +1,19 @@
+espresso:
+  content: 'espresso'
+  rating: 1.0
+  created_at: <%= 10.minutes.ago %>
+
+ethiopia:
+  content: 'ethiopia'
+  rating: 1.0
+  created_at: <%= 3.years.ago %>
+
+guatemala:
+  content: 'guatemala'
+  rating: 1.0
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  content: 'most recent'
+  rating: 1.0
+  created_at: <%= Time.zone.now %>
