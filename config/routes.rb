@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 
+  # roasters
+  resources :roasters
+
+  # coffees
+  resources :coffees
+
   # static page routing
   get '/help', to: 'static_pages#help'
 end

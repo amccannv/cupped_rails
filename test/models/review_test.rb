@@ -4,7 +4,7 @@ class ReviewTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:michael)
-    @coffee = coffees(:one)
+    @coffee = coffees(:ethiopian)
     @review = @user.reviews.build(coffee: @coffee, content: 'Lorem ipsum', rating: 1.0)
   end
 

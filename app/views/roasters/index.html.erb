@@ -1,0 +1,7 @@
+<% provide(:title, 'Roasters') %>
+<%= link_to 'Add new roaster', new_roaster_path, class: 'btn btn-lg btn-primary' %>
+<h1>
+  <% @roasters.each do |roaster| %>
+    <%= roaster.name %>
+  <% end %>
+</h1>

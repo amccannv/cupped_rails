@@ -1,0 +1,7 @@
+<% provide(:title, 'Coffees') %>
+<%= link_to 'Add new coffee', new_coffee_path, class: 'btn btn-lg btn-primary' %>
+<h1>
+  <% @coffees.each do |coffee| %>
+    <%= coffee.name %>
+  <% end %>
+</h1>
